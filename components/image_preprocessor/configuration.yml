@@ -1,7 +1,9 @@
 description: Resize and normalize input images according to the selected object detection
   model requirements, and also convert different input formats (png, jpeg) to a consistent
   format.
+input-class: ImagePreprocessorInput
 name: ImagePreprocessor
+output-class: ImagePreprocessorOutput
 parameters:
   consistent_format: jpeg
   normalization_factor: 255.0

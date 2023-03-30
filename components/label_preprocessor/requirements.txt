@@ -1,0 +1,6 @@
+python
+typing==3.7.4.3
+pydantic==1.8.2
+fastapi==0.68.1
+python-dotenv==0.19.1
+PyYAML==6.0

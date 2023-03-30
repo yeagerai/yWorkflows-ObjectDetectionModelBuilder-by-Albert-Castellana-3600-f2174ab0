@@ -1,0 +1,5 @@
+description: Deploy the exported object detection model on the chosen cloud platform,
+  and expose a REST API for real-time object detection.
+name: ModelDeployer
+parameters:
+  cloud_platform: AWS

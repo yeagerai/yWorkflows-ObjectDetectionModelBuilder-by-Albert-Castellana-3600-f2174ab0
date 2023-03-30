@@ -1,0 +1,8 @@
+description: Export the trained object detection model into a standardized format
+  (e.g., ONNX, TensorFlow) suitable for deployment. The ModelExporter component receives
+  the trained_model_path, converts the model to the desired format and exports it
+  to a specified output path.
+name: ModelExporter
+parameters:
+  output_format: ONNX
+  output_path: ./exported_models/

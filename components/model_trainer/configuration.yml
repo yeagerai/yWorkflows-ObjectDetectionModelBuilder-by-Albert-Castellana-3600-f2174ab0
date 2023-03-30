@@ -1,6 +1,8 @@
 description: Train the selected object detection model using the preprocessed images
   and labels, and save the trained model in the desired format (e.g., PyTorch, TensorFlow).
+input-class: PreprocessedImage
 name: ModelTrainer
+output-class: ConvertedLabel
 parameters:
   epochs: 10
   learning_rate: 0.001

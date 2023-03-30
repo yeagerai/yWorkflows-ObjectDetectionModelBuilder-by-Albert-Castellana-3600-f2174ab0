@@ -1,0 +1,7 @@
+description: Convert the uploaded labels into the designated annotation format required
+  by the selected object detection model. This component takes image_labels as input
+  and transforms them to the required format for the selected object detection model,
+  enabling seamless integration of label data into the training process.
+name: LabelPreprocessor
+parameters:
+  annotation_format: COCO

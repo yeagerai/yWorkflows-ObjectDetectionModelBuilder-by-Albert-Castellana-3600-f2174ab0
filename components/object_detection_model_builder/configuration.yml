@@ -1,0 +1,11 @@
+description: 'This is a workflow for building and deploying an object detection model.
+  It takes in annotation_format, deployment_type, image_labels, model_architecture,
+  model_framework, and uploaded_images inputs. The process includes creating training
+  data, building the model using the specified architecture and framework, training
+  the model on the image labels, and deploying the model to the specified deployment
+  type. Finally, it outputs the deployed URL, deployment status, and trained model
+  path.
+
+  '
+name: ObjectDetectionModelBuilder
+parameters: {}

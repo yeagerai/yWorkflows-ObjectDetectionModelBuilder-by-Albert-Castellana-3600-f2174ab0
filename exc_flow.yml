@@ -1,0 +1,39 @@
+yaml
+components:
+  node-0:
+    class: ImagePreprocessor
+    module-path: components/image_preprocessor/image_preprocessor.py
+    configuration: !include components/image_preprocessor/configuration.yml
+  node-1:
+    class: LabelPreprocessor
+    module-path: components/label_preprocessor/label_preprocessor.py
+    configuration: !include components/label_preprocessor/configuration.yml
+  node-2:
+    class: ModelTrainer
+    module-path: components/model_trainer/model_trainer.py
+    configuration: !include components/model_trainer/configuration.yml
+  node-3:
+    class: ModelExporter
+    module-path: components/model_exporter/model_exporter.py
+    configuration: !include components/model_exporter/configuration.yml
+  node-4:
+    class: ModelDeployer
+    module-path: components/model_deployer/model_deployer.py
+    configuration: !include components/model_deployer/configuration.yml
+
+flow-matrix:
+  [
+    [0, 1, 0, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0]
+  ]
+
+mapper:
+  uploaded_images: node-0.ImagePreprocessor.preprocessed_images
+  image_labels: node-1.LabelPreprocessor.converted_labels
+  preprocessed_images: node-2.ModelTrainer.trained_model_path
+  converted_labels: node-2.ModelTrainer.trained_model_path
+  trained_model_path: node-3.ModelExporter.exported_model_path
+  exported_model_path: node-4.ModelDeployer.deployed_url
